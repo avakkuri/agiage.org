@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Agiage.org - Coming Soon</title>
+
+<meta name="description" content="Agiage.org is coming soon. Built by the developer behind NysseNyt, JunatNyt and Euribor Now.">
+<meta name="theme-color" content="#ffd400">
+
+<style>
+:root {
+    --yellow: #ffd400;
+    --dark: #050505;
+    --card: #141414;
+    --text: #ffffff;
+    --muted: #b5b5b5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        sans-serif;
+    background: var(--dark);
+    color: var(--text);
+    overflow-x: hidden;
+}
+
+.background {
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255, 212, 0, 0.20) 0%,
+            rgba(255, 212, 0, 0.07) 35%,
+            transparent 70%
+        );
+    pointer-events: none;
+}
+
+.grid {
+    position: fixed;
+    inset: 0;
+    opacity: 0.08;
+    background-image:
+        linear-gradient(var(--yellow) 1px, transparent 1px),
+        linear-gradient(90deg, var(--yellow) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+}
+
+.language-switcher {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+}
+
+.language-switcher button {
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,212,0,.4);
+    background: rgba(255,212,0,.1);
+    color: var(--yellow);
+    cursor: pointer;
+    font-weight: 700;
+    margin-left: 5px;
+}
+
+.language-switcher button:hover {
+    background: rgba(255,212,0,.2);
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 50px 20px;
+}
+
+.hero {
+    padding-top: 40px;
+    text-align: center;
+}
+
+.logo {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 30px;
+    border-radius: 42px;
+    background: linear-gradient(145deg, #ffe600, #ffcc00);
+    color: black;
+    font-size: 5rem;
+    font-weight: 900;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    animation:
+        pulseGlow 4s ease-in-out infinite,
+        floatLogo 8s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+    0%,100%{
+        box-shadow:
+            0 0 40px rgba(255,212,0,.25),
+            0 0 80px rgba(255,212,0,.10);
+    }
+
+    50%{
+        box-shadow:
+            0 0 70px rgba(255,212,0,.50),
+            0 0 140px rgba(255,212,0,.20);
+    }
+}
+
+@keyframes floatLogo {
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+h1 {
+    font-size: clamp(3rem, 8vw, 6rem);
+    letter-spacing: -0.04em;
+    margin-bottom: 10px;
+}
+
+.highlight {
+    color: var(--yellow);
+}
+
+.subtitle {
+    color: var(--muted);
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.coming {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: 999px;
+    border: 2px solid var(--yellow);
+    color: var(--yellow);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+}
+
+.description {
+    max-width: 750px;
+    margin: 40px auto 0;
+    line-height: 1.8;
+    color: #d9d9d9;
+    font-size: 1.05rem;
+}
+
+.apps-grid {
+    margin-top: 70px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 24px;
+}
+
+.app-card {
+    background: var(--card);
+    border: 1px solid rgba(255,212,0,.12);
+    border-radius: 24px;
+    padding: 24px;
+    transition: .3s;
+}
+
+.app-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255,212,0,.35);
+}
+
+.app-card h3 {
+    color: var(--yellow);
+    margin-bottom: 12px;
+}
+
+.app-card p {
+    color: var(--muted);
+    line-height: 1.6;
+    min-height: 50px;
+}
+
+.app-links {
+    display: flex;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.app-links a {
+    flex: 1;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 12px;
+    border-radius: 10px;
+    background: var(--yellow);
+    color: #000;
+    transition: .3s;
+}
+
+.app-links a:hover {
+    transform: translateY(-2px);
+}
+
+.footer {
+    margin-top: 70px;
+    text-align: center;
+    color: #777;
+}
+
+@media (max-width: 768px) {
+
+    .logo {
+        width: 140px;
+        height: 140px;
+        font-size: 4rem;
+    }
+
+    .app-links {
+        flex-direction: column;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="background"></div>
+<div class="grid"></div>
+
+<div class="language-switcher">
+    <button onclick="setLanguage('en')">EN</button>
+    <button onclick="setLanguage('fi')">FI</button>
+</div>
+
+<div class="container">
+
+    <section class="hero">
+
+        <!-- Replace A with actual logo image later -->
+        <div class="logo">A</div>
+
+        <h1><span class="highlight">Agiage</span>.org</h1>
+
+        <p class="subtitle"
+           data-en="Intelligent tools. Real-time data. Beautiful simplicity."
+           data-fi="Älykkäitä työkaluja. Reaaliaikaista dataa. Yksinkertainen käyttökokemus.">
+        </p>
+
+        <div class="coming"
+             data-en="Coming Soon"
+             data-fi="Tulossa pian">
+        </div>
+
+        <div class="description"
+             data-en="Agiage.org is building the next generation of intelligent applications powered by data and AI. Created by Ari Vakkuri, developer of NysseNyt, JunatNyt and Euribor Now."
+             data-fi="Agiage.org rakentaa uuden sukupolven älykkäitä sovelluksia datan ja tekoälyn avulla. Sivuston takana on NysseNyt-, JunatNyt- ja Euribor Now -sovellusten kehittäjä Ari Vakkuri.">
+        </div>
+
+    </section>
+
+    <section class="apps-grid">
+
+        <div class="app-card">
+            <h3>NysseNyt</h3>
+
+            <p
+            data-en="Live buses and rail in the Tampere region."
+            data-fi="Tampereen seudun bussit ja raideliikenne reaaliajassa.">
+            </p>
+
+            <div class="app-links">
+                <a href="https://apps.apple.com/fi/developer/ari-vakkuri/id1543016030"
+                   target="_blank">
+                    App Store
+                </a>
+
+                <a href="https://play.google.com/store/apps/developer?id=Selected+innovations&hl=fi"
+                   target="_blank">
+                    Google Play
+                </a>
+            </div>
+        </div>
+
+        <div class="app-card">
+            <h3>JunatNyt</h3>
+
+            <p
+            data-en="Live train tracking and station departures."
+            data-fi="Junien reaaliaikainen seuranta ja asemien lähdöt.">
+            </p>
+
+            <div class="app-links">
+                <a href="https://apps.apple.com/us/app/junatnyt-trains-finland/id1554670309"
+                   target="_blank">
+                    App Store
+                </a>
+
+                <a href="https://play.google.com/store/apps/details?id=com.selectedinnovations.junatnyt&hl=en-US"
+                   target="_blank">
+                    Google Play
+                </a>
+            </div>
+        </div>
+
+        <div class="app-card">
+            <h3>Euribor Now</h3>
+
+            <p
+            data-en="Daily Euribor rates and loan calculator."
+            data-fi="Päivittäiset Euribor-korot ja lainalaskuri.">
+            </p>
+
+            <div class="app-links">
+                <a href="https://apps.apple.com/fi/app/euribor-now/id6443815764"
+                   target="_blank">
+                    App Store
+                </a>
+
+                <a href="https://play.google.com/store/apps/details?id=com.selectedinnovations.euribornow&hl=en"
+                   target="_blank">
+                    Google Play
+                </a>
+            </div>
+        </div>
+
+    </section>
+
+    <div class="footer">
+        © 2026 Agiage.org
+    </div>
+
+</div>
+
+<script>
+function setLanguage(lang) {
+
+    localStorage.setItem("language", lang);
+
+    document.querySelectorAll("[data-en]").forEach(element => {
+        element.textContent = element.dataset[lang];
+    });
+
+    document.documentElement.lang = lang;
+}
+
+const savedLanguage =
+    localStorage.getItem("language") ||
+    (navigator.language.startsWith("fi") ? "fi" : "en");
+
+setLanguage(savedLanguage);
+</script>
+
+</body>
+</html>
